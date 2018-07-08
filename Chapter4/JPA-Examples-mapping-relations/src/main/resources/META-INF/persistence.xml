@@ -1,0 +1,14 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0">
+
+    <persistence-unit name="local" transaction-type="JTA">
+        <jta-data-source>jdbc/CustomDS</jta-data-source>
+    </persistence-unit>
+
+    <persistence-unit name="integration" transaction-type="JTA">
+        <jta-data-source>jdbc/CustomDS</jta-data-source>
+    </persistence-unit>
+
+    <persistence-unit name="production" transaction-type="JTA">
+        <jta-data-source>jdbc/CustomDS</jta-data-source>
+    </persistence-unit>
+</persistence>
