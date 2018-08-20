@@ -1,0 +1,23 @@
+<!--
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+    <persistence-unit name="local">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <class>org.rao.kotlin.rest.organization.service.PersonServiceImpl</class>
+        <class>org.rao.kotlin.rest.organization.entity.OrganizationEntity</class>
+        <exclude-unlisted-classes/>
+        <properties>
+            <property name="javax.persisteData creatednce.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres"/>
+            <property name="javax.persistence.jdbc.password" value="postgres"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            &lt;!&ndash; enable this property to see SQL and other logging &ndash;&gt;
+            &lt;!&ndash; property name="eclipselink.logging.level" value="FINE"/ &ndash;&gt;
+            &lt;!&ndash; property name="eclipselink.ddl-generation" value="DROP_AND_CREATE" /&ndash;&gt;
+        </properties>
+    </persistence-unit>
+
+</persistence>
+-->

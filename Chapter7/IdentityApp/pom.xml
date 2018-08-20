@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.rao.kotlin.rest</groupId>
+    <artifactId>identity-app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+
+    <packaging>war</packaging>
+
+
+    <properties>
+        <kotlin.version>1.2.50</kotlin.version>
+        <junit>4.8.2</junit>
+        <jersey-server>1.8</jersey-server>
+        <jersey-json>1.8</jersey-json>
+        <jersey-client>1.8</jersey-client>
+        <javax.annotation-api>1.2</javax.annotation-api>
+        <javax.ejb-api>3.2.2</javax.ejb-api>
+        <javax.enterprise.cdi.api>2.0</javax.enterprise.cdi.api>
+        <hibernate-jpa>1.0.0.Final</hibernate-jpa>
+        <hibernate-core>4.3.5.Final</hibernate-core>
+        <org.eclipse.persistence.jpa>2.7.2</org.eclipse.persistence.jpa>
+        <postgresql>9.1-901-1.jdbc4</postgresql>
+        <mockito-core>2.19.0</mockito-core>
+        <eclipselink>2.5.0</eclipselink>
+
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-server</artifactId>
+            <version>${jersey-server}</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${jersey-json}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-client</artifactId>
+            <version>${jersey-client}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-api</artifactId>
+            <version>${javax.annotation-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.ejb</groupId>
+            <artifactId>javax.ejb-api</artifactId>
+            <version>${javax.ejb-api}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.enterprise</groupId>
+            <artifactId>cdi-api</artifactId>
+            <version>${javax.enterprise.cdi.api}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate.javax.persistence</groupId>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>${hibernate-jpa}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${hibernate-core}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa</artifactId>
+            <version>${org.eclipse.persistence.jpa}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>eclipselink</artifactId>
+            <version>${eclipselink}</version>
+        </dependency>
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>IdentityApp</finalName>
+        <sourceDirectory>src/main/kotlin</sourceDirectory>
+        <testSourceDirectory>src/test/kotlin</testSourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <version>${kotlin.version}</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <goals>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>kotlin-maven-plugin</artifactId>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <version>${kotlin.version}</version>
+
+                <configuration>
+                    <compilerPlugins>
+
+                        <plugin>no-arg</plugin>
+                        <plugin>all-open</plugin>
+                        <plugin>jpa</plugin>
+                    </compilerPlugins>
+
+                    <pluginOptions>
+                        <!--<option>no-arg:annotation=com.my.Annotation</option>-->
+                        <!-- Call instance initializers in the synthetic constructor -->
+                        <option>no-arg:invokeInitializers=true</option>
+                        <option>all-open:annotation=javax.ejb.Stateless</option>
+                    </pluginOptions>
+
+                </configuration>
+
+                <dependencies>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-noarg</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.jetbrains.kotlin</groupId>
+                        <artifactId>kotlin-maven-allopen</artifactId>
+                        <version>${kotlin.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
+
