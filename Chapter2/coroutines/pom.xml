@@ -1,0 +1,1 @@
+So far we discussed creating and running the coroutines. Note that all the coroutines that we created so far executes in a serial fashion. In the example 16_coroutine where we created two coroutines game1() and game2() are executed serially in the main thread.
