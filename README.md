@@ -1,3 +1,7 @@
+## [Get this title for $10 on Packt's Spring Sale](https://www.packt.com/B10075?utm_source=github&utm_medium=packt-github-repo&utm_campaign=spring_10_dollar_2022)
+-----
+For a limited period, all eBooks and Videos are only $10. All the practical content you need \- by developers, for developers
+
 # Kotlin for Enterprise Applications using Java EE
 
 <a href="https://www.packtpub.com/application-development/kotlin-enterprise-applications-using-java-ee?utm_source=github&utm_medium=repository&utm_campaign=9781788997270 "><img src="https://d255esdrn735hr.cloudfront.net/sites/default/files/imagecache/ppv4_main_book_cover/B10075.png" alt="Kotlin for Enterprise Applications using Java EE" height="256px" align="right"></a>
